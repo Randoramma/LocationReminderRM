@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D058CA161AEFEE3D00BC383A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D058CA151AEFEE3D00BC383A /* MapKit.framework */; };
 		D08A200E1AEF231C002CBC48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A200D1AEF231C002CBC48 /* main.m */; };
 		D08A20111AEF231C002CBC48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A20101AEF231C002CBC48 /* AppDelegate.m */; };
 		D08A20141AEF231C002CBC48 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A20131AEF231C002CBC48 /* MainViewController.m */; };
@@ -14,7 +15,6 @@
 		D08A20191AEF231C002CBC48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08A20181AEF231C002CBC48 /* Images.xcassets */; };
 		D08A201C1AEF231C002CBC48 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08A201A1AEF231C002CBC48 /* LaunchScreen.xib */; };
 		D08A20281AEF231C002CBC48 /* RM_LocationReminderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A20271AEF231C002CBC48 /* RM_LocationReminderTests.m */; };
-		D08A20321AEF2349002CBC48 /* Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A20311AEF2349002CBC48 /* Protected.m */; };
 		D08A20351AEF2B97002CBC48 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A20341AEF2B97002CBC48 /* Stack.m */; };
 		D08A203A1AEF4002002CBC48 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A20391AEF4002002CBC48 /* Queue.m */; };
 /* End PBXBuildFile section */
@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D058CA151AEFEE3D00BC383A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D08A20081AEF231C002CBC48 /* RM LocationReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RM LocationReminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08A200C1AEF231C002CBC48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08A200D1AEF231C002CBC48 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		D08A20211AEF231C002CBC48 /* RM LocationReminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RM LocationReminderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08A20261AEF231C002CBC48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08A20271AEF231C002CBC48 /* RM_LocationReminderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RM_LocationReminderTests.m; sourceTree = "<group>"; };
-		D08A20311AEF2349002CBC48 /* Protected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Protected.m; sourceTree = "<group>"; };
 		D08A20331AEF2B97002CBC48 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = ../Stack.h; sourceTree = "<group>"; };
 		D08A20341AEF2B97002CBC48 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stack.m; path = ../Stack.m; sourceTree = "<group>"; };
 		D08A20381AEF4002002CBC48 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
@@ -55,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D058CA161AEFEE3D00BC383A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,9 +72,9 @@
 		D08A1FFF1AEF231C002CBC48 = {
 			isa = PBXGroup;
 			children = (
+				D058CA151AEFEE3D00BC383A /* MapKit.framework */,
 				D08A20371AEF3F9A002CBC48 /* Queue */,
 				D08A20361AEF3F8B002CBC48 /* Stack */,
-				D08A20311AEF2349002CBC48 /* Protected.m */,
 				D08A200A1AEF231C002CBC48 /* RM LocationReminder */,
 				D08A20241AEF231C002CBC48 /* RM LocationReminderTests */,
 				D08A20091AEF231C002CBC48 /* Products */,
@@ -198,6 +199,11 @@
 				TargetAttributes = {
 					D08A20071AEF231C002CBC48 = {
 						CreatedOnToolsVersion = 6.3;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					D08A20201AEF231C002CBC48 = {
 						CreatedOnToolsVersion = 6.3;
@@ -249,7 +255,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D08A20321AEF2349002CBC48 /* Protected.m in Sources */,
 				D08A20141AEF231C002CBC48 /* MainViewController.m in Sources */,
 				D08A20111AEF231C002CBC48 /* AppDelegate.m in Sources */,
 				D08A203A1AEF4002002CBC48 /* Queue.m in Sources */,
@@ -449,6 +454,7 @@
 				D08A202D1AEF231C002CBC48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D08A202E1AEF231C002CBC48 /* Build configuration list for PBXNativeTarget "RM LocationReminderTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +463,7 @@
 				D08A20301AEF231C002CBC48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
