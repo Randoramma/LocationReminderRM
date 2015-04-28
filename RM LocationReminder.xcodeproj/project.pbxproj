@@ -14,6 +14,7 @@
 		D08A20191AEF231C002CBC48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08A20181AEF231C002CBC48 /* Images.xcassets */; };
 		D08A201C1AEF231C002CBC48 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08A201A1AEF231C002CBC48 /* LaunchScreen.xib */; };
 		D08A20281AEF231C002CBC48 /* RM_LocationReminderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A20271AEF231C002CBC48 /* RM_LocationReminderTests.m */; };
+		D08A20321AEF2349002CBC48 /* Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A20311AEF2349002CBC48 /* Protected.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		D08A20211AEF231C002CBC48 /* RM LocationReminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RM LocationReminderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08A20261AEF231C002CBC48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08A20271AEF231C002CBC48 /* RM_LocationReminderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RM_LocationReminderTests.m; sourceTree = "<group>"; };
+		D08A20311AEF2349002CBC48 /* Protected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Protected.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		D08A1FFF1AEF231C002CBC48 = {
 			isa = PBXGroup;
 			children = (
+				D08A20311AEF2349002CBC48 /* Protected.m */,
 				D08A200A1AEF231C002CBC48 /* RM LocationReminder */,
 				D08A20241AEF231C002CBC48 /* RM LocationReminderTests */,
 				D08A20091AEF231C002CBC48 /* Products */,
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D08A20321AEF2349002CBC48 /* Protected.m in Sources */,
 				D08A20141AEF231C002CBC48 /* ViewController.m in Sources */,
 				D08A20111AEF231C002CBC48 /* AppDelegate.m in Sources */,
 				D08A200E1AEF231C002CBC48 /* main.m in Sources */,
