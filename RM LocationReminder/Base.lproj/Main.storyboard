@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem width="115" style="plain" systemItem="fixedSpace" id="DMr-hc-Wkn"/>
-                                    <barButtonItem style="plain" id="MOf-bc-gfc">
+                                    <barButtonItem style="plain" id="MOf-bc-gfc" userLabel="Bar Button 1">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="z1L-8f-Rat">
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -31,7 +31,7 @@
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem width="97" style="plain" systemItem="fixedSpace" id="GSV-4H-5cK"/>
-                                    <barButtonItem style="plain" id="QIA-Wn-bpM">
+                                    <barButtonItem style="plain" id="QIA-Wn-bpM" userLabel="Bar Button 2">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1iy-yk-XFv">
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -41,7 +41,7 @@
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem width="97" style="plain" systemItem="fixedSpace" id="tMe-Hw-RdS"/>
-                                    <barButtonItem style="plain" id="PX7-LP-t4O">
+                                    <barButtonItem style="plain" id="PX7-LP-t4O" userLabel="Bar Button 3">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NFZ-Vs-Zay">
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -69,6 +69,13 @@
                             <constraint firstItem="WYW-hr-sar" firstAttribute="top" secondItem="lYs-Hc-NUM" secondAttribute="bottom" id="zga-Jx-10k"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myButton1" destination="MOf-bc-gfc" id="Kkk-dc-ba5"/>
+                        <outlet property="myButton2" destination="QIA-Wn-bpM" id="gh9-de-a8H"/>
+                        <outlet property="myButton3" destination="PX7-LP-t4O" id="boF-ee-6Yf"/>
+                        <outlet property="myMainMapView" destination="lYs-Hc-NUM" id="z3Z-a0-QYM"/>
+                        <outlet property="myMainView" destination="kh9-bI-dsS" id="aqm-gO-Qer"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
