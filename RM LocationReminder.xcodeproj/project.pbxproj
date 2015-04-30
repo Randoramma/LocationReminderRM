@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D04690181AF281A40075A728 /* AddRegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04690171AF281A40075A728 /* AddRegionViewController.m */; };
 		D058CA161AEFEE3D00BC383A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D058CA151AEFEE3D00BC383A /* MapKit.framework */; };
 		D058CA191AF0080F00BC383A /* LinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = D058CA181AF0080F00BC383A /* LinkedList.m */; };
 		D08A200E1AEF231C002CBC48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A200D1AEF231C002CBC48 /* main.m */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D04690161AF281A40075A728 /* AddRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddRegionViewController.h; path = ../AddRegionViewController.h; sourceTree = "<group>"; };
+		D04690171AF281A40075A728 /* AddRegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddRegionViewController.m; path = ../AddRegionViewController.m; sourceTree = "<group>"; };
 		D058CA151AEFEE3D00BC383A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D058CA171AF0080F00BC383A /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
 		D058CA181AF0080F00BC383A /* LinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedList.m; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 		D08A200A1AEF231C002CBC48 /* RM LocationReminder */ = {
 			isa = PBXGroup;
 			children = (
+				D04690161AF281A40075A728 /* AddRegionViewController.h */,
+				D04690171AF281A40075A728 /* AddRegionViewController.m */,
 				D08A200F1AEF231C002CBC48 /* AppDelegate.h */,
 				D08A20101AEF231C002CBC48 /* AppDelegate.m */,
 				D08A20121AEF231C002CBC48 /* MainViewController.h */,
@@ -261,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D058CA191AF0080F00BC383A /* LinkedList.m in Sources */,
+				D04690181AF281A40075A728 /* AddRegionViewController.m in Sources */,
 				D08A20141AEF231C002CBC48 /* MainViewController.m in Sources */,
 				D08A20111AEF231C002CBC48 /* AppDelegate.m in Sources */,
 				D08A203A1AEF4002002CBC48 /* Queue.m in Sources */,

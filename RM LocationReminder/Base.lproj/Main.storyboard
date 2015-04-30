@@ -93,6 +93,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-296" y="245"/>
+        </scene>
+        <!--AddRegionVC-->
+        <scene sceneID="mU2-ze-VFY">
+            <objects>
+                <viewController storyboardIdentifier="AddRegionVC" title="AddRegionVC" id="Fa2-1l-X6h" customClass="AddRegionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SYH-gP-D1l"/>
+                        <viewControllerLayoutGuide type="bottom" id="cjd-YZ-m9c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b2L-HY-a9p">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="theRegion Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JRm-Z5-Rfz">
+                                <rect key="frame" x="236" y="28" width="129" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Px-1z-UDg">
+                                <rect key="frame" x="260" y="550" width="81" height="30"/>
+                                <state key="normal" title="Add Region">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addRegionButtonPressed:" destination="Fa2-1l-X6h" eventType="touchUpInside" id="Azm-dE-p1g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JRm-Z5-Rfz" firstAttribute="top" secondItem="SYH-gP-D1l" secondAttribute="bottom" constant="8" id="dg4-9v-x5Q"/>
+                            <constraint firstItem="cjd-YZ-m9c" firstAttribute="top" secondItem="2Px-1z-UDg" secondAttribute="bottom" constant="20" id="eGJ-6J-fGV"/>
+                            <constraint firstAttribute="centerX" secondItem="2Px-1z-UDg" secondAttribute="centerX" id="hmo-sR-voz"/>
+                            <constraint firstAttribute="centerX" secondItem="JRm-Z5-Rfz" secondAttribute="centerX" id="qyh-eB-Tuw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addRegionTextField" destination="JRm-Z5-Rfz" id="4dj-2M-MQL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1X2-Wy-Nsf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="395" y="242"/>
         </scene>
     </scenes>
 </document>

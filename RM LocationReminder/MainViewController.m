@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "AppDelegate.h"
-//#import "AddRegionalViewController.h"
+#import "AddRegionViewController.h"
 
 @interface MainViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
 @property (strong, nonatomic) IBOutlet UIView *myMainView;
@@ -35,7 +35,10 @@
   self.locationManager = [[CLLocationManager alloc]init];
   // become the delegate.
   self.locationManager.delegate = self;
-  self.myMainMapView.delegate = self; 
+  self.myMainMapView.delegate = self;
+  
+  // register the VC as the Notifications Center observer. We will recieve every notification with "RegionAdded:"
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(regionAdded:) name:@"RegionAdded" object:nil];
   
   // check authorization status if available.
   if ([CLLocationManager locationServicesEnabled]) {
@@ -45,6 +48,8 @@
     }
   }
   
+  //MARK:
+  //MARK: - Button Actions
   UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
   
   [self.myMainMapView addGestureRecognizer:longPress];
@@ -95,7 +100,8 @@
 }
 
 
-
+//MARK:
+//MARK: Location Manager
 // adssigned to wait for user to allow access to location finder before revealing status on map.
 -(void)locationManager: (CLLocationManager *)manager
 didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
@@ -114,12 +120,20 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
       nil;
     }];
   } // didChangeAuthorizationStatus
-  
-  //MARK: Gesture recoginzer
-  
+
   UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
   [self.myMainMapView addGestureRecognizer:longPress];
 } // init
+
+
+
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+  NSLog(@"entered region");
+}
+
+//MARK:
+//MARK: UI Gesture Recoginzer
+
 
 -(void)handleLongPress:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
   CLLocation *firstLocation = locations.firstObject;
@@ -144,7 +158,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
   [theTitle appendString:lat];
   [theTitle appendString:@" long= "];
   [theTitle appendString:lng];
-    NSLog(@"%@", theTitle);
+   // NSLog(@"%@", theTitle);
   
   MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
   annotation.coordinate = coordinate;
@@ -154,10 +168,11 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
   }
 } // handleLongPress
 
+//MARK:
+//MARK: MapView
 -(MKAnnotationView *)mapView: (MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
   
   if ([annotation isKindOfClass:[MKUserLocation class]]) {
-    NSLog(@"not the right class");
     return nil;
 
   } // viewForAnnotation
@@ -184,7 +199,31 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 
 -(void) mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
   NSLog(@"pressed");
+  // provide the coordinate for the VC.
+  CLLocationCoordinate2D coordinate = [view.annotation coordinate];
+  // add the controller to the stack.
+  AddRegionViewController *addRegionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AddRegionVC"];
+  // must add the coordinate to the region.
+  addRegionVC.coordinate = coordinate;
+  // must store the VC into the locationManager.
+  addRegionVC.locationManager = self.locationManager;
   
+  [self presentViewController:addRegionVC animated:YES completion:^{
+    nil;
+  }];
   
 } // calloutAccessoryControlTapped
+
+//MARK:
+//MARK: Notification Center
+// the region to be added.
+-(void) regionAdded: (NSNotification *)notification {
+  
+} // regionAdded
+
+// best practice: when you add a notification to the observer you need to remove yourself as observer.
+- (void)dealloc {
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+} // dealloc
+
 @end
