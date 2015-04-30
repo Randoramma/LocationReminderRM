@@ -7,14 +7,20 @@
 //
 
 #import "MainViewController.h"
+#import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import "AppDelegate.h"
+//#import "AddRegionalViewController.h"
 
-@interface MainViewController ()
+@interface MainViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
 @property (strong, nonatomic) IBOutlet UIView *myMainView;
 @property (weak, nonatomic) IBOutlet MKMapView *myMainMapView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *myButton1;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *myButton2;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *myButton3;
+
+// our strong reference to the locationManager object.
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 #define METERS_PER_MILE 1609.344
 
@@ -25,8 +31,24 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  // instantiation of CLLocation manager.
+  self.locationManager = [[CLLocationManager alloc]init];
+  // become the delegate.
+  self.locationManager.delegate = self;
+  self.myMainMapView.delegate = self; 
   
-}
+  // check authorization status if available.
+  if ([CLLocationManager locationServicesEnabled]) {
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+      [self.locationManager requestAlwaysAuthorization];
+      self.myMainMapView.showsUserLocation = true;
+    }
+  }
+  
+  UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+  
+  [self.myMainMapView addGestureRecognizer:longPress];
+} // viewDidLoad
 
 - (void)viewWillAppear:(BOOL) animated {
   CLLocationCoordinate2D seattleLocation;
@@ -70,11 +92,99 @@
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
 }
 
 
 
+// adssigned to wait for user to allow access to location finder before revealing status on map.
+-(void)locationManager: (CLLocationManager *)manager
+didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+  if (status == kCLAuthorizationStatusAuthorizedAlways) {
+    self.myMainMapView.showsUserLocation = true;
+   // [self.locationManager startMonitoringSignificantLocationChanges];
+    
+  } else {
+    
+    NSString *title = @"no Access Granted";
+    NSString *message = @"You have denied this app from accessing your location.  To use this app, please grant access and reload the app.";
+    
+    UIAlertController *noAccessAlert= [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    [self presentViewController:noAccessAlert animated:YES completion:^{
+      nil;
+    }];
+  } // didChangeAuthorizationStatus
+  
+  //MARK: Gesture recoginzer
+  
+  UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+  [self.myMainMapView addGestureRecognizer:longPress];
+} // init
 
+-(void)handleLongPress:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+  CLLocation *firstLocation = locations.firstObject;
+  NSLog(@"%f, %f", firstLocation.coordinate.latitude, firstLocation.coordinate.longitude);
+  
+} // didUpdateLocations
 
+-(void) handleLongPress: (UILongPressGestureRecognizer *)longPress {
+  
+  if (longPress.state == UIGestureRecognizerStateBegan) {
+  CGPoint locationInMap = [longPress locationInView:self.myMainMapView];
+  [self.myMainMapView convertPoint:locationInMap toCoordinateFromView:self.myMainMapView];
+  
+  CLLocationCoordinate2D coordinate = [self.myMainMapView convertPoint:locationInMap toCoordinateFromView:self.myMainMapView];
+//  NSLog(@"%f, %f", coordinate.latitude, coordinate.longitude);
+//
+  NSString *lat = [NSString stringWithFormat:@"%1.2f", coordinate.latitude];
+  NSString *lng = [NSString stringWithFormat:@"%1.2f", coordinate.longitude];
+
+    NSMutableString *theTitle = [NSMutableString string];
+  [theTitle appendString:@"This coord is: lat= "];
+  [theTitle appendString:lat];
+  [theTitle appendString:@" long= "];
+  [theTitle appendString:lng];
+    NSLog(@"%@", theTitle);
+  
+  MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+  annotation.coordinate = coordinate;
+  annotation.title = theTitle;
+  
+  [self.myMainMapView addAnnotation:annotation];
+  }
+} // handleLongPress
+
+-(MKAnnotationView *)mapView: (MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+  
+  if ([annotation isKindOfClass:[MKUserLocation class]]) {
+    NSLog(@"not the right class");
+    return nil;
+
+  } // viewForAnnotation
+  
+  MKPinAnnotationView *pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"AnnotationView"];
+  
+  if (!pinView) {
+    pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"AnnotationView"];
+    pinView.pinColor = MKPinAnnotationColorGreen;
+    pinView.animatesDrop = true;
+    pinView.canShowCallout = true;
+    pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    pinView.draggable = true;
+    
+  } else {
+    pinView.annotation = annotation;
+  }
+  return pinView;
+} // viewForAnnotation
+
+-(void) mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState {
+  
+} // didChangeDragState
+
+-(void) mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+  NSLog(@"pressed");
+  
+  
+} // calloutAccessoryControlTapped
 @end

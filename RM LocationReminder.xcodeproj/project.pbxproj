@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D058CA161AEFEE3D00BC383A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D058CA151AEFEE3D00BC383A /* MapKit.framework */; };
+		D058CA191AF0080F00BC383A /* LinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = D058CA181AF0080F00BC383A /* LinkedList.m */; };
 		D08A200E1AEF231C002CBC48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A200D1AEF231C002CBC48 /* main.m */; };
 		D08A20111AEF231C002CBC48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A20101AEF231C002CBC48 /* AppDelegate.m */; };
 		D08A20141AEF231C002CBC48 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A20131AEF231C002CBC48 /* MainViewController.m */; };
@@ -31,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		D058CA151AEFEE3D00BC383A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D058CA171AF0080F00BC383A /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
+		D058CA181AF0080F00BC383A /* LinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedList.m; sourceTree = "<group>"; };
 		D08A20081AEF231C002CBC48 /* RM LocationReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RM LocationReminder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08A200C1AEF231C002CBC48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08A200D1AEF231C002CBC48 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 			children = (
 				D08A20381AEF4002002CBC48 /* Queue.h */,
 				D08A20391AEF4002002CBC48 /* Queue.m */,
+				D058CA171AF0080F00BC383A /* LinkedList.h */,
+				D058CA181AF0080F00BC383A /* LinkedList.m */,
 			);
 			name = Queue;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D058CA191AF0080F00BC383A /* LinkedList.m in Sources */,
 				D08A20141AEF231C002CBC48 /* MainViewController.m in Sources */,
 				D08A20111AEF231C002CBC48 /* AppDelegate.m in Sources */,
 				D08A203A1AEF4002002CBC48 /* Queue.m in Sources */,

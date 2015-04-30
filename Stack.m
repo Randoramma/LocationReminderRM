@@ -4,7 +4,7 @@
 //
 //  Created by Randy McLain on 4/27/15.
 //  Copyright (c) 2015 Randy McLain. All rights reserved.
-//  borrowed from codeproject.com (Cloud Hsu)
+//  borrowed format from codeproject.com (Cloud Hsu)
 
 #import "Stack.h"
 
@@ -23,10 +23,13 @@
 
 -(void) push:(id)theObject {
   // we have to move the objects to the next index before we can add the new object.
-  
-  // should use a for loop here.  
-  [theStack addObject:theObject];
-  count = theStack.count;
+//  
+//  // should use a for loop here.
+//  for (NSObject *o in theStack) {
+//    
+//  }
+//  [theStack addOb];
+//  count = theStack.count;
 }
 
 - (NSObject *)pop {
@@ -45,4 +48,5 @@
   count = 0;
   
 }
+
 @end
