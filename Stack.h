@@ -8,16 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Stack : NSObject {
+@interface Stack : NSMutableArray {
   
   NSMutableArray *theStack;
   long count;
 }
 
 -(void)push: (id)theObject;
--(NSObject *)pop;
+-(id)pop;
 -(void)clear;
-
-@property (nonatomic, readonly) long count;
 
 @end

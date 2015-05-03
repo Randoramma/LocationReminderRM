@@ -19,6 +19,15 @@
 		D08A20281AEF231C002CBC48 /* RM_LocationReminderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A20271AEF231C002CBC48 /* RM_LocationReminderTests.m */; };
 		D08A20351AEF2B97002CBC48 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A20341AEF2B97002CBC48 /* Stack.m */; };
 		D08A203A1AEF4002002CBC48 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = D08A20391AEF4002002CBC48 /* Queue.m */; };
+		D0A9D4421AF2C94700789802 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A9D4411AF2C94700789802 /* InterfaceController.m */; };
+		D0A9D4451AF2C94700789802 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A9D4441AF2C94700789802 /* NotificationController.m */; };
+		D0A9D4471AF2C94700789802 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A9D4461AF2C94700789802 /* Images.xcassets */; };
+		D0A9D44B1AF2C94700789802 /* RM LocationReminder WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = D0A9D44A1AF2C94700789802 /* RM LocationReminder WatchKit App.app */; };
+		D0A9D4531AF2C94700789802 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9D4511AF2C94700789802 /* Interface.storyboard */; };
+		D0A9D4551AF2C94700789802 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A9D4541AF2C94700789802 /* Images.xcassets */; };
+		D0A9D4581AF2C94700789802 /* RM LocationReminder WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D0A9D43B1AF2C94700789802 /* RM LocationReminder WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D0A9D4621AF2DF0300789802 /* Element.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A9D4611AF2DF0300789802 /* Element.m */; };
+		D0F2E6021AF4108500CE7416 /* WatchRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F2E6011AF4108500CE7416 /* WatchRowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +38,35 @@
 			remoteGlobalIDString = D08A20071AEF231C002CBC48;
 			remoteInfo = "RM LocationReminder";
 		};
+		D0A9D44C1AF2C94700789802 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D08A20001AEF231C002CBC48 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0A9D4491AF2C94700789802;
+			remoteInfo = "RM LocationReminder WatchKit App";
+		};
+		D0A9D4561AF2C94700789802 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D08A20001AEF231C002CBC48 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0A9D43A1AF2C94700789802;
+			remoteInfo = "RM LocationReminder WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D0A9D45F1AF2C94700789802 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D0A9D4581AF2C94700789802 /* RM LocationReminder WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D04690161AF281A40075A728 /* AddRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddRegionViewController.h; path = ../AddRegionViewController.h; sourceTree = "<group>"; };
@@ -54,6 +91,22 @@
 		D08A20341AEF2B97002CBC48 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stack.m; path = ../Stack.m; sourceTree = "<group>"; };
 		D08A20381AEF4002002CBC48 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
 		D08A20391AEF4002002CBC48 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
+		D0A9D43B1AF2C94700789802 /* RM LocationReminder WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RM LocationReminder WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A9D43E1AF2C94700789802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0A9D43F1AF2C94700789802 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		D0A9D4401AF2C94700789802 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		D0A9D4411AF2C94700789802 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		D0A9D4431AF2C94700789802 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		D0A9D4441AF2C94700789802 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		D0A9D4461AF2C94700789802 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D0A9D44A1AF2C94700789802 /* RM LocationReminder WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RM LocationReminder WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A9D4501AF2C94700789802 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0A9D4521AF2C94700789802 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D0A9D4541AF2C94700789802 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D0A9D4601AF2DF0300789802 /* Element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Element.h; sourceTree = "<group>"; };
+		D0A9D4611AF2DF0300789802 /* Element.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Element.m; sourceTree = "<group>"; };
+		D0F2E6001AF4108500CE7416 /* WatchRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WatchRowController.h; path = ../WatchRowController.h; sourceTree = "<group>"; };
+		D0F2E6011AF4108500CE7416 /* WatchRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WatchRowController.m; path = ../WatchRowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,17 +125,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0A9D4381AF2C94700789802 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		D08A1FFF1AEF231C002CBC48 = {
 			isa = PBXGroup;
 			children = (
+				D0F2E6031AF579AA00CE7416 /* LinkedList */,
 				D058CA151AEFEE3D00BC383A /* MapKit.framework */,
 				D08A20371AEF3F9A002CBC48 /* Queue */,
 				D08A20361AEF3F8B002CBC48 /* Stack */,
 				D08A200A1AEF231C002CBC48 /* RM LocationReminder */,
 				D08A20241AEF231C002CBC48 /* RM LocationReminderTests */,
+				D0A9D43C1AF2C94700789802 /* RM LocationReminder WatchKit Extension */,
+				D0A9D44E1AF2C94700789802 /* RM LocationReminder WatchKit App */,
 				D08A20091AEF231C002CBC48 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +155,8 @@
 			children = (
 				D08A20081AEF231C002CBC48 /* RM LocationReminder.app */,
 				D08A20211AEF231C002CBC48 /* RM LocationReminderTests.xctest */,
+				D0A9D43B1AF2C94700789802 /* RM LocationReminder WatchKit Extension.appex */,
+				D0A9D44A1AF2C94700789802 /* RM LocationReminder WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,10 +219,61 @@
 			children = (
 				D08A20381AEF4002002CBC48 /* Queue.h */,
 				D08A20391AEF4002002CBC48 /* Queue.m */,
-				D058CA171AF0080F00BC383A /* LinkedList.h */,
-				D058CA181AF0080F00BC383A /* LinkedList.m */,
 			);
 			name = Queue;
+			sourceTree = "<group>";
+		};
+		D0A9D43C1AF2C94700789802 /* RM LocationReminder WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D0F2E6001AF4108500CE7416 /* WatchRowController.h */,
+				D0F2E6011AF4108500CE7416 /* WatchRowController.m */,
+				D0A9D4401AF2C94700789802 /* InterfaceController.h */,
+				D0A9D4411AF2C94700789802 /* InterfaceController.m */,
+				D0A9D4431AF2C94700789802 /* NotificationController.h */,
+				D0A9D4441AF2C94700789802 /* NotificationController.m */,
+				D0A9D4461AF2C94700789802 /* Images.xcassets */,
+				D0A9D43D1AF2C94700789802 /* Supporting Files */,
+			);
+			path = "RM LocationReminder WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		D0A9D43D1AF2C94700789802 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0A9D43E1AF2C94700789802 /* Info.plist */,
+				D0A9D43F1AF2C94700789802 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0A9D44E1AF2C94700789802 /* RM LocationReminder WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				D0A9D4511AF2C94700789802 /* Interface.storyboard */,
+				D0A9D4541AF2C94700789802 /* Images.xcassets */,
+				D0A9D44F1AF2C94700789802 /* Supporting Files */,
+			);
+			path = "RM LocationReminder WatchKit App";
+			sourceTree = "<group>";
+		};
+		D0A9D44F1AF2C94700789802 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0A9D4501AF2C94700789802 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0F2E6031AF579AA00CE7416 /* LinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				D058CA171AF0080F00BC383A /* LinkedList.h */,
+				D058CA181AF0080F00BC383A /* LinkedList.m */,
+				D0A9D4601AF2DF0300789802 /* Element.h */,
+				D0A9D4611AF2DF0300789802 /* Element.m */,
+			);
+			name = LinkedList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,10 +286,12 @@
 				D08A20041AEF231C002CBC48 /* Sources */,
 				D08A20051AEF231C002CBC48 /* Frameworks */,
 				D08A20061AEF231C002CBC48 /* Resources */,
+				D0A9D45F1AF2C94700789802 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D0A9D4571AF2C94700789802 /* PBXTargetDependency */,
 			);
 			name = "RM LocationReminder";
 			productName = "RM LocationReminder";
@@ -198,6 +316,39 @@
 			productReference = D08A20211AEF231C002CBC48 /* RM LocationReminderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D0A9D43A1AF2C94700789802 /* RM LocationReminder WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0A9D45E1AF2C94700789802 /* Build configuration list for PBXNativeTarget "RM LocationReminder WatchKit Extension" */;
+			buildPhases = (
+				D0A9D4371AF2C94700789802 /* Sources */,
+				D0A9D4381AF2C94700789802 /* Frameworks */,
+				D0A9D4391AF2C94700789802 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0A9D44D1AF2C94700789802 /* PBXTargetDependency */,
+			);
+			name = "RM LocationReminder WatchKit Extension";
+			productName = "RM LocationReminder WatchKit Extension";
+			productReference = D0A9D43B1AF2C94700789802 /* RM LocationReminder WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		D0A9D4491AF2C94700789802 /* RM LocationReminder WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0A9D45D1AF2C94700789802 /* Build configuration list for PBXNativeTarget "RM LocationReminder WatchKit App" */;
+			buildPhases = (
+				D0A9D4481AF2C94700789802 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RM LocationReminder WatchKit App";
+			productName = "RM LocationReminder WatchKit App";
+			productReference = D0A9D44A1AF2C94700789802 /* RM LocationReminder WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,6 +370,12 @@
 						CreatedOnToolsVersion = 6.3;
 						TestTargetID = D08A20071AEF231C002CBC48;
 					};
+					D0A9D43A1AF2C94700789802 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					D0A9D4491AF2C94700789802 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 				};
 			};
 			buildConfigurationList = D08A20031AEF231C002CBC48 /* Build configuration list for PBXProject "RM LocationReminder" */;
@@ -236,6 +393,8 @@
 			targets = (
 				D08A20071AEF231C002CBC48 /* RM LocationReminder */,
 				D08A20201AEF231C002CBC48 /* RM LocationReminderTests */,
+				D0A9D43A1AF2C94700789802 /* RM LocationReminder WatchKit Extension */,
+				D0A9D4491AF2C94700789802 /* RM LocationReminder WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -258,6 +417,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0A9D4391AF2C94700789802 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0A9D4471AF2C94700789802 /* Images.xcassets in Resources */,
+				D0A9D44B1AF2C94700789802 /* RM LocationReminder WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0A9D4481AF2C94700789802 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0A9D4531AF2C94700789802 /* Interface.storyboard in Resources */,
+				D0A9D4551AF2C94700789802 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -266,11 +443,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D058CA191AF0080F00BC383A /* LinkedList.m in Sources */,
+				D0F2E6021AF4108500CE7416 /* WatchRowController.m in Sources */,
 				D04690181AF281A40075A728 /* AddRegionViewController.m in Sources */,
 				D08A20141AEF231C002CBC48 /* MainViewController.m in Sources */,
 				D08A20111AEF231C002CBC48 /* AppDelegate.m in Sources */,
 				D08A203A1AEF4002002CBC48 /* Queue.m in Sources */,
 				D08A20351AEF2B97002CBC48 /* Stack.m in Sources */,
+				D0A9D4621AF2DF0300789802 /* Element.m in Sources */,
 				D08A200E1AEF231C002CBC48 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +462,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0A9D4371AF2C94700789802 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0A9D4451AF2C94700789802 /* NotificationController.m in Sources */,
+				D0A9D4421AF2C94700789802 /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -290,6 +478,16 @@
 			isa = PBXTargetDependency;
 			target = D08A20071AEF231C002CBC48 /* RM LocationReminder */;
 			targetProxy = D08A20221AEF231C002CBC48 /* PBXContainerItemProxy */;
+		};
+		D0A9D44D1AF2C94700789802 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0A9D4491AF2C94700789802 /* RM LocationReminder WatchKit App */;
+			targetProxy = D0A9D44C1AF2C94700789802 /* PBXContainerItemProxy */;
+		};
+		D0A9D4571AF2C94700789802 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0A9D43A1AF2C94700789802 /* RM LocationReminder WatchKit Extension */;
+			targetProxy = D0A9D4561AF2C94700789802 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -308,6 +506,14 @@
 				D08A201B1AEF231C002CBC48 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		D0A9D4511AF2C94700789802 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0A9D4521AF2C94700789802 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -447,6 +653,62 @@
 			};
 			name = Release;
 		};
+		D0A9D4591AF2C94700789802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RM LocationReminder WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D0A9D45A1AF2C94700789802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "RM LocationReminder WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D0A9D45B1AF2C94700789802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = RM_LocationReminder_WatchKit_Extension;
+				INFOPLIST_FILE = "RM LocationReminder WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		D0A9D45C1AF2C94700789802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = RM_LocationReminder_WatchKit_Extension;
+				INFOPLIST_FILE = "RM LocationReminder WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -473,6 +735,24 @@
 			buildConfigurations = (
 				D08A202F1AEF231C002CBC48 /* Debug */,
 				D08A20301AEF231C002CBC48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0A9D45D1AF2C94700789802 /* Build configuration list for PBXNativeTarget "RM LocationReminder WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0A9D45B1AF2C94700789802 /* Debug */,
+				D0A9D45C1AF2C94700789802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0A9D45E1AF2C94700789802 /* Build configuration list for PBXNativeTarget "RM LocationReminder WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0A9D4591AF2C94700789802 /* Debug */,
+				D0A9D45A1AF2C94700789802 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

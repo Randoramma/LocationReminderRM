@@ -48,6 +48,15 @@
     }
   }
   
+  CLLocationCoordinate2D seattleLocation;
+  seattleLocation.latitude = 47.60;
+  seattleLocation.longitude = -122.33;
+  
+  MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(seattleLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+  
+  [_myMainMapView setRegion: viewRegion animated: YES];
+  
+  
   //MARK:
   //MARK: - Button Actions
   UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
@@ -56,14 +65,7 @@
 } // viewDidLoad
 
 - (void)viewWillAppear:(BOOL) animated {
-  CLLocationCoordinate2D seattleLocation;
-  seattleLocation.latitude = 47.60;
-  seattleLocation.longitude = -122.33;
-  
-  MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(seattleLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
 
-  [_myMainMapView setRegion: viewRegion animated: YES];
-  
 }
 - (IBAction)button1Pressed:(id)sender {
   CLLocationCoordinate2D appleLocation;
@@ -91,7 +93,7 @@
   MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(piLocation, 4*METERS_PER_MILE, 4*METERS_PER_MILE);
   
   [_myMainMapView setRegion: viewRegion animated: YES];
-
+  NSLog(@"The regions being monitored are: , %lu", (unsigned long)self.locationManager.monitoredRegions.count);
 }
 
 
@@ -129,6 +131,12 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
   NSLog(@"entered region");
+  UILocalNotification *notification = [[UILocalNotification alloc] init];
+  [notification setRegion:region];
+  notification.alertTitle = @"You've found us!";
+  notification.alertBody = @"The Body of the Alert!";
+  notification.alertAction = @"region launch";
+  [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
 //MARK:
@@ -218,8 +226,27 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
 //MARK: Notification Center
 // the region to be added.
 -(void) regionAdded: (NSNotification *)notification {
+  // This is the notification which is sent back from the region controller.
+  NSDictionary *userInfo = notification.userInfo;
+  CLCircularRegion *region = userInfo[@"theRegion"];
+  
+
   
 } // regionAdded
+
+
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+  
+  MKCircleRenderer *circleRenderer = [[MKCircleRenderer alloc] initWithOverlay:overlay];
+  
+  circleRenderer.fillColor = [UIColor blueColor];
+  circleRenderer.alpha = 0.5;
+  circleRenderer.strokeColor = [UIColor purpleColor];
+  
+  
+  return circleRenderer;
+  
+} // rendererForOverlay
 
 // best practice: when you add a notification to the observer you need to remove yourself as observer.
 - (void)dealloc {

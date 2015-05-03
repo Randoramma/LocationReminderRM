@@ -22,12 +22,13 @@ const int theRegionRadius= 200;
   // text field delegate set.  This VC is where the data is sent.
   self.addRegionTextField.delegate = self;
   
-}
+} // viewDidLoad
+
 // to release the keyboard (must become the delegate too!
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
   [textField resignFirstResponder];
   return true;
-}
+} // textFieldShouldReturn
 
 - (IBAction)addRegionButtonPressed:(id)sender {
   
@@ -36,20 +37,18 @@ const int theRegionRadius= 200;
   if ([CLLocationManager isMonitoringAvailableForClass:[CLCircularRegion class]]) {
     
     // instantiate region (center - radius - identifier).
-    CLCircularRegion *theRegion = [[CLCircularRegion alloc] initWithCenter:self.coordinate radius:theRegionRadius identifier:self.addRegionTextField.text];
+    CLCircularRegion *theRegion = [[CLCircularRegion alloc] initWithCenter:self.coordinate radius:200 identifier:self.addRegionTextField.text];
     // begin monitoring the abstract region.
     [self.locationManager startMonitoringForRegion:theRegion];
     
     NSDictionary *userInfo = @{@"coordinates": theRegion};
-    // will post the notification from notification Center.
+    // will post this notification from notification Center.
     [[NSNotificationCenter defaultCenter] postNotificationName:@"regionAdded:" object:self userInfo:userInfo];
     NSLog(@"region added from home!");
     // release the VC.
     [self dismissViewControllerAnimated:true completion:nil];
   } // if
 } // addRegionButtonPressed
-
-
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];

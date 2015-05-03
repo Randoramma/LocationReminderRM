@@ -10,42 +10,34 @@
 
 @implementation Stack
 
-@synthesize count;
-
 -(id)init {
   if (self = [super init]) {
     theStack = [[NSMutableArray alloc] init];
-    count = 0;
     
   }
   return self;
 }
 
 -(void) push:(id)theObject {
-  // we have to move the objects to the next index before we can add the new object.
-//  
-//  // should use a for loop here.
-//  for (NSObject *o in theStack) {
-//    
-//  }
-//  [theStack addOb];
-//  count = theStack.count;
+
+  [self addObject:theObject];
 }
 
-- (NSObject *)pop {
-  NSObject *obj = nil;
-  if (theStack.count > 0) {
-    obj = [theStack lastObject];
-    [theStack removeLastObject];
-    count = theStack.count;
+- (id)pop {
+
+  id lastObject = [self lastObject];
+  
+  if (lastObject) {
+    [self removeLastObject];
+    return lastObject;
+  } else {
+    return nil;
   }
-  return obj;
 }
 
 -(void)clear {
   
   [theStack removeAllObjects];
-  count = 0;
   
 }
 

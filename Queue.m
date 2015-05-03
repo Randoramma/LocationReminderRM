@@ -4,39 +4,27 @@
 //
 //  Created by Randy McLain on 4/27/15.
 //  Copyright (c) 2015 Randy McLain. All rights reserved.
-//
+// adapted from http://stackoverflow.com/questions/817469/how-do-i-make-and-use-a-queue-in-objective-c
 
 #import "Queue.h"
 
-@implementation Queue
+@implementation Queue: NSMutableArray
 
-@synthesize count;
-
--(id)init {
-  if (self = [super init]) {
-    theQueue = [[NSMutableArray alloc] init];
-    count = 0;
+- (id) dequeue {
+  // if ([self count] == 0) return nil; // to avoid raising exception
+  id headObject = [self objectAtIndex:0];
+  if (headObject != nil) {
+    [self removeObjectAtIndex:0];
   }
-  return self;
+  return headObject;
 }
 
--(void) add:(NSObject *)theObject {
-  if (!theObject){
-  [theQueue addObject: (NSObject *) theObject];
-  count = theQueue.count;
-  }
+- (void) enqueue:(id)anObject {
+  [self addObject:anObject];
 }
 
--(NSObject *) remove {
-  NSObject *obj = nil;
-  if (theQueue.count > 0) {
-    obj = [theQueue objectAtIndex: 0];
-    [theQueue removeObjectAtIndex: 0];
-  }
-  return obj;
-}
--(void) clear {
-  [theQueue removeAllObjects];
-  count = 0;
+- (void) clear {
+  [self removeAllObjects];
+  
 }
 @end

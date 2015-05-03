@@ -17,7 +17,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
+  
+  // required for Push notifications. Boiler Plate.   
+  if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+    [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+  }
+
   return YES;
+}
+
+-(void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+  
+  NSLog(@"did recieve local notification");
+  
+  
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

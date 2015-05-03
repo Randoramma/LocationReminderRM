@@ -8,14 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Queue : NSData {
-  
-  NSMutableArray *theQueue;
-  long count;
-}
--(void)add: (NSObject *)theObject;
--(NSObject *) remove;
--(void)clear;
-
-@property (nonatomic, readonly) long count;
+@interface Queue : NSMutableArray
+  - (id) dequeue;
+  - (void) enqueue: (id)obj;
+  - (void) clear;
 @end
