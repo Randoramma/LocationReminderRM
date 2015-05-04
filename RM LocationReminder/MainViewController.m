@@ -93,7 +93,7 @@
   MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(piLocation, 4*METERS_PER_MILE, 4*METERS_PER_MILE);
   
   [_myMainMapView setRegion: viewRegion animated: YES];
-  NSLog(@"The regions being monitored are: , %lu", (unsigned long)self.locationManager.monitoredRegions.count);
+  //NSLog(@"The regions being monitored are: , %lu", (unsigned long)self.locationManager.monitoredRegions.count);
 }
 
 
@@ -109,11 +109,11 @@
 didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
   if (status == kCLAuthorizationStatusAuthorizedAlways) {
     self.myMainMapView.showsUserLocation = true;
-   // [self.locationManager startMonitoringSignificantLocationChanges];
+    [self.locationManager startMonitoringSignificantLocationChanges];
     
   } else {
     
-    NSString *title = @"no Access Granted";
+    NSString *title = @"No Access Granted";
     NSString *message = @"You have denied this app from accessing your location.  To use this app, please grant access and reload the app.";
     
     UIAlertController *noAccessAlert= [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
@@ -230,8 +230,10 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
   NSDictionary *userInfo = notification.userInfo;
   CLCircularRegion *region = userInfo[@"theRegion"];
   
-
   
+  MKCircle *circle = [MKCircle circleWithCenterCoordinate:region.center radius:region.radius];
+  [self.myMainMapView addOverlay:circle];
+
 } // regionAdded
 
 

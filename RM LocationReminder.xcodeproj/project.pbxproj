@@ -27,7 +27,9 @@
 		D0A9D4551AF2C94700789802 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A9D4541AF2C94700789802 /* Images.xcassets */; };
 		D0A9D4581AF2C94700789802 /* RM LocationReminder WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D0A9D43B1AF2C94700789802 /* RM LocationReminder WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D0A9D4621AF2DF0300789802 /* Element.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A9D4611AF2DF0300789802 /* Element.m */; };
-		D0F2E6021AF4108500CE7416 /* WatchRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F2E6011AF4108500CE7416 /* WatchRowController.m */; };
+		D0AB35301AF6C37100804ADF /* RegionController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AB352F1AF6C37100804ADF /* RegionController.m */; };
+		D0AB35331AF6C55B00804ADF /* MapDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AB35321AF6C55B00804ADF /* MapDetailController.m */; };
+		D0AB35361AF6CA8F00804ADF /* RegionRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AB35351AF6CA8F00804ADF /* RegionRowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,8 +107,12 @@
 		D0A9D4541AF2C94700789802 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D0A9D4601AF2DF0300789802 /* Element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Element.h; sourceTree = "<group>"; };
 		D0A9D4611AF2DF0300789802 /* Element.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Element.m; sourceTree = "<group>"; };
-		D0F2E6001AF4108500CE7416 /* WatchRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WatchRowController.h; path = ../WatchRowController.h; sourceTree = "<group>"; };
-		D0F2E6011AF4108500CE7416 /* WatchRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WatchRowController.m; path = ../WatchRowController.m; sourceTree = "<group>"; };
+		D0AB352E1AF6C37100804ADF /* RegionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegionController.h; sourceTree = "<group>"; };
+		D0AB352F1AF6C37100804ADF /* RegionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionController.m; sourceTree = "<group>"; };
+		D0AB35311AF6C55B00804ADF /* MapDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDetailController.h; sourceTree = "<group>"; };
+		D0AB35321AF6C55B00804ADF /* MapDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDetailController.m; sourceTree = "<group>"; };
+		D0AB35341AF6CA8F00804ADF /* RegionRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegionRowController.h; sourceTree = "<group>"; };
+		D0AB35351AF6CA8F00804ADF /* RegionRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionRowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,14 +232,18 @@
 		D0A9D43C1AF2C94700789802 /* RM LocationReminder WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D0F2E6001AF4108500CE7416 /* WatchRowController.h */,
-				D0F2E6011AF4108500CE7416 /* WatchRowController.m */,
 				D0A9D4401AF2C94700789802 /* InterfaceController.h */,
 				D0A9D4411AF2C94700789802 /* InterfaceController.m */,
 				D0A9D4431AF2C94700789802 /* NotificationController.h */,
 				D0A9D4441AF2C94700789802 /* NotificationController.m */,
 				D0A9D4461AF2C94700789802 /* Images.xcassets */,
 				D0A9D43D1AF2C94700789802 /* Supporting Files */,
+				D0AB352E1AF6C37100804ADF /* RegionController.h */,
+				D0AB352F1AF6C37100804ADF /* RegionController.m */,
+				D0AB35311AF6C55B00804ADF /* MapDetailController.h */,
+				D0AB35321AF6C55B00804ADF /* MapDetailController.m */,
+				D0AB35341AF6CA8F00804ADF /* RegionRowController.h */,
+				D0AB35351AF6CA8F00804ADF /* RegionRowController.m */,
 			);
 			path = "RM LocationReminder WatchKit Extension";
 			sourceTree = "<group>";
@@ -443,7 +453,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D058CA191AF0080F00BC383A /* LinkedList.m in Sources */,
-				D0F2E6021AF4108500CE7416 /* WatchRowController.m in Sources */,
 				D04690181AF281A40075A728 /* AddRegionViewController.m in Sources */,
 				D08A20141AEF231C002CBC48 /* MainViewController.m in Sources */,
 				D08A20111AEF231C002CBC48 /* AppDelegate.m in Sources */,
@@ -466,8 +475,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AB35301AF6C37100804ADF /* RegionController.m in Sources */,
+				D0AB35331AF6C55B00804ADF /* MapDetailController.m in Sources */,
 				D0A9D4451AF2C94700789802 /* NotificationController.m in Sources */,
 				D0A9D4421AF2C94700789802 /* InterfaceController.m in Sources */,
+				D0AB35361AF6CA8F00804ADF /* RegionRowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,9 +7,12 @@
 //
 
 #import "InterfaceController.h"
+#import "RegionRowController.h"
+#import <CoreLocation/CoreLocation.h>
 
 
 @interface InterfaceController()
+@property (weak, nonatomic) IBOutlet WKInterfaceButton *regionButton;
 
 @end
 

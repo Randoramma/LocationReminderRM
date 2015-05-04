@@ -10,40 +10,71 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <button width="1" alignment="left" title="Button" id="WrT-v9-oFf">
+                        <imageView alignment="center" image="compass" id="W7U-2M-Xat"/>
+                        <separator alignment="left" id="OPn-6O-2pb"/>
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="Button" id="PrU-fB-aGY">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="SDJ-m4-eYJ" kind="push" id="awo-gk-hXS"/>
+                                <segue destination="SDJ-m4-eYJ" kind="push" id="cMi-AQ-2kW"/>
                             </connections>
                         </button>
                     </items>
-                    <color key="backgroundColor" red="0.21563337390000001" green="1" blue="0.15384560180000001" alpha="0.78000000000000003" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="regionButton" destination="PrU-fB-aGY" id="74l-ob-dpX"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Region Controller-->
         <scene sceneID="jWJ-tM-n32">
             <objects>
-                <controller id="SDJ-m4-eYJ">
+                <controller id="SDJ-m4-eYJ" customClass="RegionController">
                     <items>
-                        <table alignment="left" id="ee1-ZV-PLq">
+                        <table alignment="left" id="0Lg-45-wSx">
                             <items>
-                                <tableRow id="h7S-fI-20B" customClass="WatchRowController">
-                                    <group key="rootItem" width="1" alignment="left" id="m1c-wq-5Gi">
+                                <tableRow identifier="regionRowType" id="IxB-Zt-CgR" customClass="RegionRowController">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="B7D-D5-ZMG">
                                         <items>
-                                            <label width="121" height="31" alignment="left" text="Label" id="7YM-qe-8j3"/>
+                                            <label alignment="left" text="Label" id="065-rI-pG6">
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
                                         </items>
+                                        <connections>
+                                            <segue destination="v91-Bn-0rb" kind="push" id="IUB-ai-c1r"/>
+                                        </connections>
                                     </group>
                                     <connections>
-                                        <outlet property="rowLabel" destination="7YM-qe-8j3" id="4NW-Po-onA"/>
+                                        <outlet property="regionLabel" destination="065-rI-pG6" id="D3t-a9-T5f"/>
                                     </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="regionTable" destination="0Lg-45-wSx" id="Xcq-6F-UdA"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="412" y="344"/>
+        </scene>
+        <!--Map Detail Controller-->
+        <scene sceneID="nHW-Sz-ONh">
+            <objects>
+                <controller id="v91-Bn-0rb" customClass="MapDetailController">
+                    <items>
+                        <map height="100" alignment="left" id="yyx-mB-jTa"/>
+                        <label alignment="center" text="Label" id="sQM-ge-P6d">
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                    </items>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="596" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
