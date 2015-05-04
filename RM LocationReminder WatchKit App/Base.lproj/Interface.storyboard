@@ -42,9 +42,6 @@
                                                 <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                             </label>
                                         </items>
-                                        <connections>
-                                            <segue destination="v91-Bn-0rb" kind="push" id="IUB-ai-c1r"/>
-                                        </connections>
                                     </group>
                                     <connections>
                                         <outlet property="regionLabel" destination="065-rI-pG6" id="D3t-a9-T5f"/>
@@ -61,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="412" y="344"/>
         </scene>
-        <!--Map Detail Controller-->
+        <!--MapViewController-->
         <scene sceneID="nHW-Sz-ONh">
             <objects>
-                <controller id="v91-Bn-0rb" customClass="MapDetailController">
+                <controller identifier="MapViewController" id="v91-Bn-0rb" customClass="MapDetailController">
                     <items>
                         <map height="100" alignment="left" id="yyx-mB-jTa"/>
                         <label alignment="center" text="Label" id="sQM-ge-P6d">
@@ -72,6 +69,10 @@
                         </label>
                     </items>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="mapDetail" destination="yyx-mB-jTa" id="exh-ek-9Tx"/>
+                        <outlet property="mapLabel" destination="sQM-ge-P6d" id="UqT-re-ER0"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="596" y="345"/>
