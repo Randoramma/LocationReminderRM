@@ -19,10 +19,9 @@
 @implementation MapDetailController: WKInterfaceController
 
 -(void)awakeWithContext:(id)context {
-  CLRegion *theRegion = context;
+  CLCircularRegion *theRegion = context;
   
   [self.mapLabel setText:theRegion.identifier];
-  
   
   MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(theRegion.center, 500.0, 500.0);
 

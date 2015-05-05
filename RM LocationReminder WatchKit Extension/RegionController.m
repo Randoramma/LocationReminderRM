@@ -24,7 +24,7 @@
   self.regions = manager.monitoredRegions.allObjects;
   [self.regionTable setNumberOfRows:self.regions.count withRowType:@"regionRowType"];
   
-  for (CLRegion *theRegion in self.regions) {
+  for (CLCircularRegion *theRegion in self.regions) {
     
     NSInteger theIndex = [self.regions indexOfObject:theRegion];
     RegionRowController *regionController= [self.regionTable rowControllerAtIndex:theIndex];
