@@ -50,10 +50,20 @@ const int theRegionRadius= 200;
   } // if
 } // addRegionButtonPressed
 
+//
+//
+//-(CLRegion *) locationCoordinateRegion: (NSString *)theName theCoordinate:(CLLocationCoordinate2D *)theCoordinate theSpan:(CLLocationDistance *)theDistance {
+//  CLRegion *theRegion = MKCoordinateRegionMakeWithDistance(*theCoordinate, *theDistance, *theDistance);
+//  
+//  return theRegion;
+//}
+
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
+
+
 
 
 @end

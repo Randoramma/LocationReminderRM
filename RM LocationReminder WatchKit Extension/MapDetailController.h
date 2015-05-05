@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <WatchKit/WatchKit.h>
 
-@interface MapDetailController : WKInterfaceController
+@interface MapDetailController: WKInterfaceController
+
 
 
 

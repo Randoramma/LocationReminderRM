@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *myButton2;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *myButton3;
 
+
+
 // our strong reference to the locationManager object.
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
@@ -51,7 +53,7 @@
   CLLocationCoordinate2D seattleLocation;
   seattleLocation.latitude = 47.60;
   seattleLocation.longitude = -122.33;
-  
+  // VV what to display on the map on the watch or the app.
   MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(seattleLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
   
   [_myMainMapView setRegion: viewRegion animated: YES];
@@ -221,6 +223,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
   }];
   
 } // calloutAccessoryControlTapped
+
 
 //MARK:
 //MARK: Notification Center

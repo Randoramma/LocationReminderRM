@@ -11,14 +11,14 @@
 @interface RegionController ()
 
 @property (weak, nonatomic) IBOutlet WKInterfaceTable *regionTable;
-@property (weak, nonatomic) NSArray *regions;
+@property (strong, nonatomic) NSArray *regions;
 
 @end
 
 @implementation RegionController
 
 -(void)awakeWithContext:(id)context {
-
+  
   CLLocationManager *manager = [[CLLocationManager alloc] init];
   
   self.regions = manager.monitoredRegions.allObjects;
@@ -37,11 +37,32 @@
   
 } // awakeWithContext
 
+- (void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex {
+  
+    [self pushControllerWithName:@"MapViewController" context:(self.regions[rowIndex])];
+
+}
+
+//-(id) contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex {
+//  
+//  
+//  NSLog(@"%@", segueIdentifier);
+//  // look for segue
+//  if ([segueIdentifier  isEqualToString:@"selectedRow" ]) {
+//    
+//    return self.regions[rowIndex];
+//  } else {
+//    return nil;
+//  }
+//}
+
 - (void) willActivate {
   [super willActivate];
+
 }
 
 -(void) didDeactivate {
+  
   
 }
 
